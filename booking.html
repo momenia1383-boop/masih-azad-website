@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>شروع پروژه | Masih Azad</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="booking-title">
+
+    <span>
+        START A PROJECT
+    </span>
+
+    <h1>
+        شروع یک پروژه جدید
+    </h1>
+
+    <p>
+        ایده شما را به یک تجربه تصویری حرفه‌ای تبدیل می‌کنیم
+    </p>
+
+</div>
+
+
+
+<div class="multi-form">
+
+<div class="progress-box">
+
+    <div class="progress-item">
+        <div class="progress-step active">1</div>
+        <span>نوع پروژه</span>
+    </div>
+
+
+    <div class="progress-line"></div>
+
+
+    <div class="progress-item">
+        <div class="progress-step">2</div>
+        <span>اطلاعات تماس</span>
+    </div>
+
+
+    <div class="progress-line"></div>
+
+
+    <div class="progress-item">
+        <div class="progress-step">3</div>
+        <span>جزئیات پروژه</span>
+    </div>
+
+
+    <div class="progress-line"></div>
+
+
+    <div class="progress-item">
+        <div class="progress-step">4</div>
+        <span>تأیید</span>
+    </div>
+
+</div>
+
+<div class="step active-step" id="step1">
+
+
+<h2>
+نوع پروژه را انتخاب کنید
+</h2>
+
+
+<div class="project-types">
+
+
+<div class="project-option" data-project="فیلمبرداری">
+
+<svg viewBox="0 0 24 24" class="service-svg">
+<path d="M4 7h11a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm13 3 5-3v10l-5-3V10z"/>
+</svg>
+
+<h3>
+فیلمبرداری
+</h3>
+
+</div>
+
+
+
+<div class="project-option" data-project="تدوین">
+
+<svg viewBox="0 0 24 24" class="service-svg">
+<path d="M4 6h16v2H4V6zm0 5h10v2H4v-2zm0 5h16v2H4v-2z"/>
+</svg>
+
+<h3>
+تدوین
+</h3>
+
+</div>
+
+
+
+<div class="project-option" data-project="تولید محتوا">
+
+<svg viewBox="0 0 24 24" class="service-svg">
+<path d="M7 2h10a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3z"/>
+</svg>
+
+<h3>
+تولید محتوا
+</h3>
+
+</div>
+
+
+</div>
+
+<p class="form-error" id="projectError"></p>
+  
+<button type="button" onclick="bookingNextStep()">
+مرحله بعد
+</button>
+  
+
+
+</div>
+
+
+
+
+<div class="step" id="step2">
+
+
+<h2>
+اطلاعات تماس
+</h2>
+
+
+<input id="userName" placeholder="نام شما">
+
+<input id="userContact" placeholder="ایمیل یا شماره تماس">
+
+  <p class="form-error" id="contactError"></p>
+
+<button type="button" onclick="bookingNextStep()">
+مرحله بعد
+</button>
+
+<button type="button" class="back-btn" onclick="previousStep()">
+بازگشت
+</button>
+
+</div>
+
+
+
+
+
+<div class="step" id="step3">
+
+
+<h2>
+جزئیات پروژه
+</h2>
+
+
+
+<input 
+id="projectTitle"
+type="text" 
+placeholder="عنوان پروژه">
+
+
+
+<textarea 
+id="projectDescription"
+placeholder="ایده یا توضیحات پروژه را بنویسید...">
+</textarea>
+  <p class="form-error" id="descriptionError"></p>
+
+
+
+<select id="projectBudget">
+
+<option>
+بودجه تقریبی را انتخاب کنید
+</option>
+
+<option>
+کمتر از ۱۰ میلیون
+</option>
+
+<option>
+۱۰ تا ۳۰ میلیون
+</option>
+
+<option>
+۳۰ تا ۷۰ میلیون
+</option>
+
+<option>
+بیشتر از ۷۰ میلیون
+</option>
+
+</select>
+
+
+
+<select id="projectTime">
+
+<option>
+زمان شروع پروژه
+</option>
+
+<option>
+فوری
+</option>
+
+<option>
+این هفته
+</option>
+
+<option>
+این ماه
+</option>
+
+<option>
+زمان مشخص نیست
+</option>
+
+</select>
+
+
+
+<input 
+type="text" 
+placeholder="لینک نمونه یا فایل مرجع (اختیاری)">
+
+
+
+<button type="button" onclick="bookingNextStep()">
+مشاهده خلاصه درخواست
+</button>
+
+<button type="button" class="back-btn" onclick="previousStep()">
+بازگشت
+</button>
+  
+</div>
+
+
+<div class="step" id="step4">
+  
+<h2>
+تأیید درخواست
+</h2>
+
+
+<div class="summary-box">
+
+
+<p>
+نوع پروژه:
+<span id="summaryProject">
+-
+</span>
+</p>
+
+
+<p>
+نام:
+<span id="summaryName">
+-
+</span>
+</p>
+
+
+<p>
+اطلاعات تماس:
+<span id="summaryContact">
+-
+</span>
+</p>
+
+
+<p>
+بودجه:
+<span id="summaryBudget">
+-
+</span>
+</p>
+
+
+<p>
+زمان شروع:
+<span id="summaryTime">
+-
+</span>
+</p>
+
+
+<p>
+توضیحات:
+<span id="summaryDescription">
+-
+</span>
+</p>
+
+
+</div>
+
+
+
+<button type="button" onclick="submitProject()">
+تأیید و ارسال درخواست
+</button>
+
+
+<button type="button" onclick="backToEdit()">
+ویرایش اطلاعات
+</button>
+
+
+  </div>
+
+</div>
+
+
+
+  <div class="success-box">
+
+
+    <div class="success-icon">
+        ✓
+    </div>
+
+
+    <h2>
+        درخواست شما ثبت شد
+    </h2>
+
+
+    <p>
+        ممنون که Masih Azad را برای پروژه خود انتخاب کردید.
+        به زودی برای بررسی جزئیات با شما تماس می‌گیریم.
+    </p>
+
+
+<button onclick="goHome()">
+    بازگشت به صفحه اصلی
+</button>
+
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+<script>
+let bookingStep = 1;
+  emailjs.init("EGD1BURAcGhVptSSH");
+let selectedProject = "";
+
+  const urlParams = new URLSearchParams(window.location.search);
+
+const selectedService = urlParams.get("service");
+
+const options = document.querySelectorAll(".project-option");
+
+  if(selectedService){
+
+
+    options.forEach(option=>{
+
+
+        if(option.dataset.project === selectedService){
+
+
+            option.classList.add("selected");
+
+
+            selectedProject = selectedService;
+
+
+        }
+
+
+    });
+
+
+  }
+
+document.getElementById("userName")
+.addEventListener("input",()=>{
+
+    document.getElementById("contactError").innerText="";
+
+});
+
+
+document.getElementById("userContact")
+.addEventListener("input",()=>{
+
+    document.getElementById("contactError").innerText="";
+
+});
+
+
+document.getElementById("projectDescription")
+.addEventListener("input",()=>{
+
+    document.getElementById("descriptionError").innerText="";
+
+});
+  
+options.forEach(option => {
+
+    option.addEventListener("click", () => {
+
+        options.forEach(item=>{
+            item.classList.remove("selected");
+        });
+
+        option.classList.add("selected");
+
+        selectedProject = option.dataset.project;
+
+    });
+
+});
+
+
+
+function updateProgress(){
+
+    document
+    .querySelectorAll(".progress-step")
+    .forEach((item,index)=>{
+
+
+        if(index < bookingStep){
+
+            item.classList.add("active");
+
+        }else{
+
+            item.classList.remove("active");
+
+        }
+
+    });
+
+
+
+    document
+    .querySelectorAll(".progress-line")
+    .forEach((line,index)=>{
+
+
+        if(index < bookingStep-1){
+
+            line.style.background="#d4af37";
+
+        }else{
+
+            line.style.background="rgba(255,255,255,.25)";
+
+        }
+
+    });
+
+}
+
+
+
+function showSummary(){
+
+
+document.getElementById("summaryProject").innerText =
+selectedProject || "-";
+
+
+document.getElementById("summaryName").innerText =
+document.getElementById("userName").value || "-";
+
+
+document.getElementById("summaryContact").innerText =
+document.getElementById("userContact").value || "-";
+
+
+document.getElementById("summaryBudget").innerText =
+document.getElementById("projectBudget").value || "-";
+
+
+document.getElementById("summaryTime").innerText =
+document.getElementById("projectTime").value || "-";
+
+
+document.getElementById("summaryDescription").innerText =
+document.getElementById("projectDescription").value || "-";
+
+}
+
+
+
+function bookingNextStep(){
+
+
+if(bookingStep === 1 && selectedProject === ""){
+
+
+document.getElementById("projectError").innerText =
+"لطفاً نوع پروژه را انتخاب کنید";
+
+
+return;
+
+}
+
+
+
+if(bookingStep === 2){
+
+
+let name =
+document.getElementById("userName").value;
+
+
+let contact =
+document.getElementById("userContact").value;
+
+
+
+if(name.trim()===""){
+
+
+document.getElementById("contactError").innerText =
+"لطفاً نام خود را وارد کنید";
+
+
+return;
+
+}
+
+
+
+if(contact.trim()===""){
+
+
+document.getElementById("contactError").innerText =
+"لطفاً اطلاعات تماس را وارد کنید";
+
+
+return;
+
+}
+
+  if(contact.length < 5){
+
+
+document.getElementById("contactError").innerText =
+"اطلاعات تماس معتبر نیست";
+
+
+return;
+
+  }
+
+
+}
+
+
+
+if(bookingStep === 3){
+
+
+let description =
+document.getElementById("projectDescription").value;
+
+
+
+if(description.trim()===""){
+
+
+document.getElementById("descriptionError").innerText =
+"لطفاً توضیحات پروژه را وارد کنید";
+
+
+return;
+
+}
+
+  if(description.length < 10){
+
+
+document.getElementById("descriptionError").innerText =
+"توضیحات پروژه کمی کوتاه است";
+
+
+return;
+
+  }
+
+}
+
+
+    const currentStep =
+document.getElementById("step" + bookingStep);
+
+
+if(currentStep){
+
+    currentStep.classList.remove("active-step");
+
+}
+
+
+
+    if(bookingStep === 3){
+
+        showSummary();
+
+    }
+
+
+    bookingStep++;
+
+
+    const nextStep =
+    document.getElementById("step"+bookingStep);
+
+
+    if(nextStep){
+
+        nextStep.classList.add("active-step");
+
+    }
+
+
+    updateProgress();
+
+
+}
+
+
+
+function backToEdit(){
+
+
+  const currentStep =
+document.getElementById("step" + bookingStep);
+
+
+if(currentStep){
+
+    currentStep.classList.remove("active-step");
+
+}
+
+
+    bookingStep = 3;
+
+
+    document
+    .getElementById("step3")
+    .classList.add("active-step");
+
+
+    updateProgress();
+
+
+}
+
+  function previousStep(){
+
+
+    const currentStep =
+    document.getElementById("step" + bookingStep);
+
+
+    if(currentStep){
+
+        currentStep.classList.remove("active-step");
+
+    }
+
+
+
+    bookingStep--;
+
+
+    const previous =
+    document.getElementById("step" + bookingStep);
+
+
+
+    if(previous){
+
+        previous.classList.add("active-step");
+
+    }
+
+
+
+    updateProgress();
+
+
+  }
+
+
+
+function submitProject(){
+
+
+let templateParams = {
+
+
+project:
+document.getElementById("summaryProject").innerText,
+
+
+name:
+document.getElementById("summaryName").innerText,
+
+
+contact:
+document.getElementById("summaryContact").innerText,
+
+
+budget:
+document.getElementById("summaryBudget").innerText,
+
+
+time:
+document.getElementById("summaryTime").innerText,
+
+
+description:
+document.getElementById("summaryDescription").innerText
+
+
+};
+
+
+
+emailjs.send(
+
+"service_tj71qse",
+
+"template_cqko0ef",
+
+templateParams
+
+)
+
+
+.then(function(){
+
+
+document
+.querySelector(".multi-form")
+.classList.add("hide-form");
+
+
+
+setTimeout(()=>{
+
+
+document
+.querySelector(".success-box")
+.classList.add("show-success");
+
+
+},400);
+
+
+
+})
+
+
+
+.catch(function(error){
+
+
+console.log(error);
+
+
+alert("ارسال درخواست ناموفق بود");
+
+
+});
+
+
+}
+
+
+
+function goHome(){
+
+    window.location.href = "index.html";
+
+  }
+
+</script>
+
+
+</body>
+
+</html>
