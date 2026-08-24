@@ -219,6 +219,8 @@ portfolioPopup.style.display="flex";
 
 
 
+if(photoBtn){
+
 photoBtn.onclick=function(){
 
     document
@@ -231,6 +233,8 @@ photoBtn.onclick=function(){
     portfolioPopup.style.display="none";
 
 };
+
+}
 
 
 
