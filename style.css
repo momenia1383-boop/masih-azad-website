@@ -3226,10 +3226,4 @@ body:has(.show-success){
     visibility:visible !important;
 }
 
-.photo-card:first-child,
-.video-card:first-child{
-    opacity:1;
-    filter:brightness(1);
-    transform:scale(1.08) translateY(0);
-    z-index:5;
-}
+
