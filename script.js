@@ -1,3 +1,4 @@
+alert("JS loaded");
 const videos = document.querySelectorAll(".video-card video");
 
 
