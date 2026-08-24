@@ -3220,6 +3220,8 @@ body:has(.show-success){
 
 }
 
-
-
-.serv
+.photo-card{
+    opacity:1 !important;
+    filter:brightness(1) !important;
+    transform:scale(1) translateY(0) !important;
+}
