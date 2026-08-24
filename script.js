@@ -267,57 +267,6 @@ window.addEventListener("scroll",()=>{
 
 });
 
-n.addEventListener("click",()=>{
-
-document.querySelector(".videos")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-portfolioPopup.style.display="none";
-
-});
-
-
-
-
-portfolioBtn.addEventListener("click",()=>{
-
-    portfolioPopup.style.display="flex";
-
-});
-
-
-
-videoBtn.onclick=function(){
-
-    document
-    .querySelector(".videos")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-
-    portfolioPopup.style.display="none";
-
-};
-
-
-
-photoBtn.onclick=function(){
-
-    document
-    .querySelector(".gallery")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-
-    portfolioPopup.style.display="none";
-
-};
-
-
 
 console.log("script loaded");
 
