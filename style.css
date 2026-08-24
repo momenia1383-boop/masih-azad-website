@@ -3220,11 +3220,8 @@ body:has(.show-success){
 
     transform:scale(1.1);
 
-}   animation:
-    popupShow .4s ease;
-
+}   .gallery{
+    display:block !important;
+    opacity:1 !important;
+    visibility:visible !important;
 }
-
-
-
-.serv
