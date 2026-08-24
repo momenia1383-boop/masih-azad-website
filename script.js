@@ -1,4 +1,4 @@
-const videos = document.querySelectorAll(".video-card video");
+zconst videos = document.querySelectorAll(".video-card video");
 
 
 const observer = new IntersectionObserver((entries)=>{
@@ -162,12 +162,15 @@ const closePopup =
 document.getElementById("closePopup");
 
 
+if(closePopup){
+
 closePopup.addEventListener("click",()=>{
 
-    portfolioPopup.style.display="none";
+portfolioPopup.style.display="none";
 
 });
 
+}
 portfolioPopup.addEventListener("click",(e)=>{
 
     if(e.target === portfolioPopup){
