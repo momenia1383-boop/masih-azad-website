@@ -322,11 +322,3 @@ photoBtn.onclick=function(){
 console.log("script loaded");
 
 
-const reveals =
-document.querySelectorAll(".reveal");
-
-
-window.addEventListener("scroll",()=>{
-
-
-    reveals.forEach((elem
